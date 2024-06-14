@@ -1,15 +1,15 @@
-INSERT INTO Genero (genero_descripcion) VALUES ('Masculino'), ('Femenino'), ('No binario'), ('Prefiero no decirlo'), ('Otro');
+INSERT INTO Generos (genero_descripcion) VALUES ('Masculino'), ('Femenino'), ('No binario'), ('Prefiero no decirlo'), ('Otro');
 
 
-INSERT INTO Rol (rol_descripcion) VALUES ('Director'), ('Maestro'), ('Administrativo'), ('Maestranza'), ('Suplente');
+INSERT INTO Roles (rol_descripcion) VALUES ('Director'), ('Maestro'), ('Administrativo'), ('Maestranza'), ('Suplente');
 
 
 
-INSERT INTO Estado (estado_descripcion) VALUES ('Vacaciones'), ('Regular'), ('Desvinculado'), ('Contratado'), ('Tercerizado'), ('Maternidad'), ('Enfermedad');
+INSERT INTO Estados (estado_descripcion) VALUES ('Vacaciones'), ('Regular'), ('Desvinculado'), ('Contratado'), ('Tercerizado'), ('Maternidad'), ('Enfermedad');
 
 
 -- Insertar empleados en la tabla de empleados
-INSERT INTO Empleados (id_rol, id_genero, nombre, apellido, dni, fecha_cumpleaños, telefono, domicilio, mail) 
+INSERT INTO Empleados (id_rol, id_genero, nombre, apellido, dni, fecha_nacimiento, telefono, domicilio, mail) 
 VALUES 
 (1, 1, 'Juan', 'Pérez', '12345678', '1990-05-15', '123456789', 'Calle Principal 123', 'juan@example.com'),
 (2, 2, 'María', 'Gómez', '87654321', '1988-08-25', '987654321', 'Avenida Central 456', 'maria@example.com'),
@@ -19,10 +19,10 @@ VALUES
 
 
 -- Insertar relaciones de empleados en la tabla de relaciones de empleados
-INSERT INTO Empleados_Relacion (id_empleado, id_estado, fecha_inicio, fecha_fin, esta_activo) 
+INSERT INTO Relaciones_Laborales (id_relacion, id_empleado, id_estado, fecha_inicio, fecha_fin, esta_activo) 
 VALUES 
-(1, 1, '2024-01-01', NULL, TRUE),
-(2, 1, '2024-02-15', NULL, TRUE),
-(3, 2, '2024-03-20', NULL, TRUE),
-(4, 3, '2024-04-10', NULL, TRUE),
-(5, 1, '2024-05-05', NULL, TRUE);
+(1, 1, 1, '2024-01-01', NULL, TRUE),
+(2, 2, 1, '2024-02-15', NULL, TRUE),
+(3, 3, 2, '2024-03-20', NULL, TRUE),
+(4, 4, 3, '2024-04-10', NULL, TRUE),
+(5, 5, 1, '2024-05-05', NULL, TRUE);
